@@ -23,8 +23,7 @@ class Shop:
         products = open(self.__file_name, 'a')
         products_r = open(self.__file_name, 'r')
         for i in args:
-            print(i.name)
-            print(i.name in products_r.read())
+            print(' '.join(products_r.read().split('\n')))
             if not (i.name in products_r.read()):
                 products.write(f'{i.name}, {i.weight}, {i.category}\n')
         products.close()
@@ -35,7 +34,7 @@ p1 = Product('Potato', 50.5, 'Vegetables')
 p2 = Product('Spaghetti', 3.4, 'Groceries')
 p3 = Product('Potato', 5.5, 'Vegetables')
 
-print(p2)
+
 
 s1.add(p1, p2, p3)
 
